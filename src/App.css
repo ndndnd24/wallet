@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@200;300;400&display=swap');
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #F4F4F9;
+  color: #586F7C;
+  font-family: 'Changa', sans-serif;
+}
+
+#root {
+  margin-top: 50px;
+  width: 80%;
+}
+
+.title-container {
+  text-align: center;
+  font-size: 35px;
+}
+
+.form-container {
+  display: flex;
+  gap: 15px;
+  margin-top: 35px;
+}
+
+.input-text-container,
+.currency-container,
+.button-container {
+  height: 50px;
+  padding-left: 15px;
+  background-color: #B8DBD9;
+  border: 2px solid #586F7C;
+  border-radius: 25px;
+  font-size: 18px;
+  font-weight: 200;
+  font-family: 'Changa', sans-serif;
+}
+
+.description-container {
+  width: calc(60% - 15px);
+}
+
+.currency-container {
+  height: 56px;
+}
+
+.button-container {
+  background-color: #04724D;
+  color: #B8DBD9;
+  border-color: #B8DBD9;
+  height: 56px;
+  padding: 0;
+  width: 75px;
+  transition: all 0.3s;
+}
+
+.button-container:hover {
+  cursor: pointer;
+  background-color: #B8DBD9;
+  border-color: #04724D;
+  color: #04724D;
+  transition: all 0.3s;
+}
+
+/* .save-button-container {
+  display: flex;
+} */
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #586F7C;
+  opacity: 1;
+  /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #586F7C;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #586F7C;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}

@@ -1,17 +1,13 @@
-import React from 'react';
-import './App.css';
-import SpendingForm from './components/SpendingForm';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
+import React from "react";
+import "./App.css";
+import SpendingForm from "./components/SpendingForm";
 
 function App() {
   return (
-    <Container className="app-container">
-      <Typography variant="h4" align="center" gutterBottom>
-        Spending Tracker
-      </Typography>
-      <SpendingForm/>
-    </Container>
+    <div className="app-container">
+      <div className="title-container">Spending Tracker</div>
+      <SpendingForm />
+    </div>
   );
 }
 

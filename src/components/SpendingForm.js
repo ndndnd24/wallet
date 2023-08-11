@@ -1,38 +1,33 @@
-import React, { useState } from 'react';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import Select from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
+import React, { useState } from "react";
 
 function SpendingForm() {
-  const [description, setDescription] = useState('');
-  const [amount, setAmount] = useState('');
-  const [currency, setCurrency] = useState('USD');
+  const [description, setDescription] = useState("");
+  const [amount, setAmount] = useState(0);
+  const [currency, setCurrency] = useState("USD");
 
   return (
-    <form>
-      <TextField
-        label="Description"
+    <form className="form-container">
+      <input
+        type="text"
+        placeholder="Description"
         value={description}
-        fullWidth
         className="description-container input-text-container"
       />
-      <TextField
-        label="Amount"
+      <input
         type="number"
+        placeholder="0"
         value={amount}
-        fullWidth
         className="amount-container input-text-container"
       />
-      <Select value={currency} className="currency-container">
-        <MenuItem value="HUF">HUF</MenuItem>
-        <MenuItem value="USD">USD</MenuItem>
-      </Select>
-      <Button variant="contained" color="primary" type="submit" className="save-button-cotnainer button-container">
+      <select value={currency} className="currency-container">
+        <option value="HUF">HUF</option>
+        <option value="USD">USD</option>
+      </select>
+      <button type="submit" className="save-button-container button-container">
         Save
-      </Button>
+      </button>
     </form>
   );
-};
+}
 
 export default SpendingForm;
