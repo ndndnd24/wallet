@@ -148,6 +148,14 @@ body {
   font-size: 35px;
 }
 
+.input-error {
+  border-color: red;
+}
+
+.error-message {
+  color: red;
+}
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -181,6 +189,7 @@ textarea:focus,
 input:focus {
   outline: none;
 }
+
 
 @media only screen and (max-width: 428px) {
   #root {

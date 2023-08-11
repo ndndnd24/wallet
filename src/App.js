@@ -43,6 +43,7 @@ function App() {
         </div>
         <div className="currency-filter-container">
           <button
+            data-testid="filter-huf-button"
             className={`filter-huf-button-container currency-button-container ${
               currencyFilter === "HUF" ? "active-currency-button" : ""
             }`}
@@ -51,6 +52,7 @@ function App() {
             HUF
           </button>
           <button
+            data-testid="filter-eur-button"
             className={`filter-usd-button-container currency-button-container ${
               currencyFilter === "USD" ? "active-currency-button" : ""
             }`}
@@ -59,6 +61,7 @@ function App() {
             USD
           </button>
           <button
+            data-testid="filter-all-button"
             className={`show-all-button-container currency-button-container ${
               currencyFilter === "" ? "active-currency-button" : ""
             }`}
