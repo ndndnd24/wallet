@@ -30,7 +30,9 @@ body {
 
 .input-text-container,
 .currency-container,
-.button-container {
+.button-container,
+.sorting-container,
+.currency-button-container {
   height: 50px;
   padding-left: 15px;
   background-color: #B8DBD9;
@@ -45,11 +47,13 @@ body {
   width: calc(60% - 15px);
 }
 
-.currency-container {
+.currency-container,
+.sorting-container {
   height: 56px;
 }
 
-.button-container {
+.button-container,
+.active-currency-button {
   background-color: #04724D;
   color: #B8DBD9;
   border-color: #B8DBD9;
@@ -67,9 +71,26 @@ body {
   transition: all 0.3s;
 }
 
-/* .save-button-container {
+.filter-container {
+  margin-top: 20px;
   display: flex;
-} */
+  justify-content: space-between;
+}
+
+.currency-filter-container {
+  display: flex;
+  gap: 5px;
+}
+
+.currency-button-container {
+  padding: 0;
+  width: 75px;
+  height: 56px;
+}
+
+.currency-button-container:hover {
+  cursor: pointer;
+}
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
