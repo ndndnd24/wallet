@@ -48,6 +48,10 @@ body {
   width: calc(60% - 15px);
 }
 
+.amount-container {
+  width: calc(40% - 210px);
+}
+
 .currency-container,
 .sorting-container {
   height: 56px;
@@ -187,7 +191,8 @@ input:focus {
     flex-direction: column;
   }
 
-  .description-container {
+  .description-container,
+  .amount-container {
     width: auto;
   }
 
