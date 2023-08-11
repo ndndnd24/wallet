@@ -177,3 +177,34 @@ textarea:focus,
 input:focus {
   outline: none;
 }
+
+@media only screen and (max-width: 428px) {
+  #root {
+    width: 90%;
+  }
+
+  .form-container {
+    flex-direction: column;
+  }
+
+  .description-container {
+    width: auto;
+  }
+
+  .filter-container {
+    flex-direction: column;
+  }
+
+  .sorting-container {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .currency-filter-container {
+    justify-content: end;
+  }
+
+  .spending-right-side-container {
+    display: ruby;
+  }
+}
