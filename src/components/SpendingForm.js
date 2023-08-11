@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { createSpending } from "./api";
 
-function SpendingForm() {
+function SpendingForm({ onSpendingCreated }) {
   const [description, setDescription] = useState("");
   const [amount, setAmount] = useState("");
   const [currency, setCurrency] = useState("USD");
@@ -20,7 +20,9 @@ function SpendingForm() {
         spent_at: new Date().toISOString(),
       };
 
-      await createSpending(spendingData);
+      const newSpending = await createSpending(spendingData);
+      onSpendingCreated(newSpending);
+
       setDescription("");
       setAmount("");
     } catch (error) {
@@ -44,11 +46,17 @@ function SpendingForm() {
         className="amount-container input-text-container"
         onChange={(e) => setAmount(e.target.value)}
       />
-      <select value={currency} className="currency-container" onChange={(e) => setCurrency(e.target.value)}>
+      <select
+        value={currency}
+        className="currency-container"
+        onChange={(e) => setCurrency(e.target.value)}
+      >
         <option value="HUF">HUF</option>
         <option value="USD">USD</option>
       </select>
-      <button type="submit" className="save-button-container button-container">Save</button>
+      <button type="submit" className="save-button-container button-container">
+        Save
+      </button>
     </form>
   );
 }
