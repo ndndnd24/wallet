@@ -1,31 +1,54 @@
 import React, { useState } from "react";
+import { createSpending } from "./api";
 
 function SpendingForm() {
   const [description, setDescription] = useState("");
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState("");
   const [currency, setCurrency] = useState("USD");
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!description || !amount) {
+      return;
+    }
+
+    try {
+      const spendingData = {
+        description,
+        amount: parseFloat(amount),
+        currency,
+        spent_at: new Date().toISOString(),
+      };
+
+      await createSpending(spendingData);
+      setDescription("");
+      setAmount("");
+    } catch (error) {
+      console.error("Error creating spending:", error);
+    }
+  };
+
   return (
-    <form className="form-container">
+    <form className="form-container" onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="Description"
         value={description}
         className="description-container input-text-container"
+        onChange={(e) => setDescription(e.target.value)}
       />
       <input
         type="number"
         placeholder="0"
         value={amount}
         className="amount-container input-text-container"
+        onChange={(e) => setAmount(e.target.value)}
       />
-      <select value={currency} className="currency-container">
+      <select value={currency} className="currency-container" onChange={(e) => setCurrency(e.target.value)}>
         <option value="HUF">HUF</option>
         <option value="USD">USD</option>
       </select>
-      <button type="submit" className="save-button-container button-container">
-        Save
-      </button>
+      <button type="submit" className="save-button-container button-container">Save</button>
     </form>
   );
 }

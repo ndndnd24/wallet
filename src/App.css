@@ -56,10 +56,11 @@ body {
 .active-currency-button {
   background-color: #04724D;
   color: #B8DBD9;
-  border-color: #B8DBD9;
+  border-color: #586F7C;
   height: 56px;
   padding: 0;
   width: 75px;
+  font-weight: 400;
   transition: all 0.3s;
 }
 
